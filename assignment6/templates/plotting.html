@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ head | safe }} <!-- safe needed for html to render -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="text-align: center">
+    <h1 class="display-4 m-4">Plotting <span class="badge badge-secondary">{{ current_time }}</span> data of county <span class="badge badge-primary">{{ current_county }}</span></h1>
+    <div class="card w-50 mx-auto m-3">
+        <div class="card-header">
+            Change plotting
+        </div>
+        <div class="card-body">
+            <form action="/plot?from={{from_date}}&to={{to_date}}" method="post" class="form-inline justify-content-center">
+                    <label for="county" class="my-1 mr-2">Select county:
+                        <select class="custom-select mr-sm-2 ml-2" name="county" id="county">
+                            {% for county in counties %}
+                                {% if county == current_county %}
+                                    <option value="{{ county }}" selected>{{ county }}</option>
+                                {% else %}
+                                    <option value="{{ county }}">{{ county }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </label>
+
+                    {% for time in times %}
+                        <div class="custom-control custom-radio custom-control-inline">
+                                {% if time == current_time %}
+                                    <label class="form-check-label mr-1" for="{{ time }}">{{ time }}</label>
+                                    <input class="form-check-input" type="radio" id="{{ time }}" name="time_select" value="{{ time }}" checked>
+                                {% else %}
+                                    <label class="form-check-label mr-1" for="{{ time }}">{{ time }}</label>
+                                    <input class="form-check-input" type="radio" id="{{ time }}" name="time_select" value="{{ time }}">
+                                {% endif %}
+                        </div><br>
+                    {% endfor %}
+
+                    <label for="date-from-input" class="col-2 col-form-label mx-4">From:
+                        <input class="form-control ml-2" type="date" value="{{ from_date }}" name="from_date_pick" id="date-from-input">
+                    </label>
+
+                    <label for="date-to-input" class="col-2 col-form-label  mx-4">To:
+                        <input class="form-control ml-2" type="date" value="{{ to_date }}" name="to_date_pick" id="date-to-input">
+                    </label>
+
+                    <input type="submit" value="Choose County" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+    {{ body | safe }}
+    <a href="http://127.0.0.1:5000/map" class="btn-block center-block">Geographic map with covid data for Norway</a>
+    <a href="http://127.0.0.1:5000/help" class="btn-block center-block">Help Page</a>
+    <script>
+        {{ script | safe }}
+    </script>
+</body>
+</html>

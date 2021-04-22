@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Visualization documentation &#8212; Web Visualization  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to Web Visualization’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-web_visualization">
+<span id="web-visualization-documentation"></span><h1>Web Visualization documentation<a class="headerlink" href="#module-web_visualization" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="web_visualization.plot_reported_cases">
+<code class="sig-prename descclassname">web_visualization.</code><code class="sig-name descname">plot_reported_cases</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">from_date</span></em>, <em class="sig-param"><span class="n">to_date</span></em>, <em class="sig-param"><span class="n">time</span></em>, <em class="sig-param"><span class="n">county</span><span class="o">=</span><span class="default_value">'all_counties'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_visualization.plot_reported_cases" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plotting a bar plot (using Altair) of reported covid cases in selected county.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>from_date</strong> – date to start plotting from.</p></li>
+<li><p><strong>to_date</strong> – date to end plotting data.</p></li>
+<li><p><strong>time</strong> – define time frame (daily/weekly)</p></li>
+<li><p><strong>county</strong> – define county to plot from.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a bar plot of selected county, time, and time frame.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="web_visualization.plot_cumulative_cases">
+<code class="sig-prename descclassname">web_visualization.</code><code class="sig-name descname">plot_cumulative_cases</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">from_date</span></em>, <em class="sig-param"><span class="n">to_date</span></em>, <em class="sig-param"><span class="n">time</span></em>, <em class="sig-param"><span class="n">county</span><span class="o">=</span><span class="default_value">'all_counties'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_visualization.plot_cumulative_cases" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plotting a line plot (using Altair) of cumulative covid cases in selected county.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>from_date</strong> – date to start plotting from.</p></li>
+<li><p><strong>to_date</strong> – date to end plotting data.</p></li>
+<li><p><strong>time</strong> – define time frame (daily/weekly)</p></li>
+<li><p><strong>county</strong> – define county to plot from.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a line plot of selected county, time, and time frame.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="web_visualization.plot_both">
+<code class="sig-prename descclassname">web_visualization.</code><code class="sig-name descname">plot_both</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">county</span><span class="o">=</span><span class="default_value">'all_counties'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_visualization.plot_both" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plotting a line plots (using Altair) of cumulative and reported covid cases in selected county.</p>
+<p>This function is executed when url with /plot is called. It also reads
+from and to dates, so that user can select the period that are beeing plotted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>county</strong> – the county to plot.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the html file showing all plots.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="web_visualization.help_page">
+<code class="sig-prename descclassname">web_visualization.</code><code class="sig-name descname">help_page</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#web_visualization.help_page" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to render main documentation html page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the html file showing documentation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="web_visualization.plot_norway">
+<code class="sig-prename descclassname">web_visualization.</code><code class="sig-name descname">plot_norway</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#web_visualization.plot_norway" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes a interactive geomap of norway with number of cases per 100k in every county.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the html file showing interactive geomap.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Web Visualization</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Web Visualization documentation</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Web Visualization’s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Jonathan.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/visualization.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

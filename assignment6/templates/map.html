@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ head | safe }}
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <a href="http://127.0.0.1:5000/plot?from={{from_date}}&to={{to_date}}" class="btn btn-primary btn-block center-block"><< Go back to main page</a>
+    <div class="text-center">
+        <h1 class="display-4 m-4">Interactive map of covid data in Norway</h1>
+        {{ body | safe }}
+    </div>
+    <script>
+        {{ script | safe }}
+    </script>
+</body>
+</html>
